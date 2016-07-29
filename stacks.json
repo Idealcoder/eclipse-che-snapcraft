@@ -1,0 +1,58 @@
+[  
+  {
+    "id": "snapcraft-default",
+    "creator": "Loic Deraed",
+    "name": "Snapcraft",
+    "description": "Default Java Stack with JDK 8, Maven and Tomcat.",
+    "scope": "general",
+    "tags": [                              
+      "Ubuntu",
+      "Snapcraft"
+    ],
+    "components": [   
+      {
+        "name": "Snapcraft",
+        "version": "2.13.1"
+      },
+      {
+        "name": "Ubuntu",
+        "version": "16.04 LTS"
+      }
+    ],
+    "source": {                            
+      "type": "source",                   
+      "origin": "https://raw.githubusercontent.com/Idealcoder/eclipse-che-snapcraft/master/Dockerfile" 
+    },
+    "workspaceConfig": {
+      "environments": [ 
+        {
+          "name": "default",
+          "recipe": null,
+          "machineConfigs": [
+            {
+              "name": "default",
+              "limits": {
+                "ram": 1000
+              },
+              "source": {
+                "location": "stub",
+                "type": "recipe"
+              },
+              "type": "docker",
+              "dev": true
+            }
+          ]
+        }
+      ],
+      "name": "default",
+      "defaultEnv": "default",
+      "description": null,
+      "commands": [ 
+        {
+          "commandLine": "snapcraft && snapcraft login && snapcraft register && snapcraft push",
+          "name": "snapcraft-build&push",
+          "type": "snapcraft"
+        }
+      ]
+    }
+]
