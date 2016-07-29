@@ -1,6 +1,6 @@
 # Snapcraft Dockerfile
 FROM codenvy/ubuntu_jre
 
-# Install snapd and snapcraft
+# Install snapcraft
 sudo apt-get update && \
-sudo apt-get install snapd snapcraft
+sudo apt-get install snapcraft -y
