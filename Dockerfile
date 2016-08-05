@@ -1,5 +1,5 @@
 # Snapcraft Dockerfile
-FROM codenvy/ubuntu_jre
+FROM codenvy/ubuntu_jdk8
 
 # Install snapcraft
 RUN sudo apt-get update && \

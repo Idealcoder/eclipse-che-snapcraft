@@ -21,7 +21,7 @@
     ],
     "source": {                            
       "type": "source",                   
-      "origin": "https://raw.githubusercontent.com/Idealcoder/eclipse-che-snapcraft/master/Dockerfile" 
+      "origin": "http://192.168.122.1:8080/Dockerfile" 
     },
     "workspaceConfig": {
       "environments": [ 
