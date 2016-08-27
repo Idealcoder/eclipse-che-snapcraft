@@ -1,8 +1,12 @@
-export COMMAND="TESTING123"
+#!/bin/bash
 
-echo "Starting build process"
+#Choose random port number
+port=$(( (RANDOM % 60000) + 1024 ))     
 
-echo "COMMAND:$1:$2:" > /projects/lastcommand.txt #Track last run command
-echo "" > /projects/output.txt #Empty file
+echo "Starting build"
 
-tail -F /projects/output.txt
+#Track last run command
+echo "COMMAND:$1:$2:$port:" > /projects/lastcommand.txt 
+
+#Listen for terminal output
+nc -l -u -p $port
